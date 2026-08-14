@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ManekiDoku — Delete Your Data</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23b04a30' stroke-width='4' stroke-linejoin='round'%3E%3Cpath d='M14 70 L46 58 L38 34 Z' fill='%23b04a30' fill-opacity='0.2'/%3E%3Cpath d='M46 58 L38 34 L64 20 L58 46 Z' fill='%23b04a30' fill-opacity='0.4'/%3E%3Cpath d='M46 58 L58 46 L86 52 Z' fill='%23b04a30' fill-opacity='0.2'/%3E%3Cpath d='M64 20 L70 10'/%3E%3Cpath d='M14 70 L46 58 L86 52'/%3E%3Cpath d='M58 46 L64 78'/%3E%3C/g%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #faf7f2;
+      --ink: #2b2620;
+      --muted: #6f675e;
+      --accent: #b04a30;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #1c1916; --ink: #ece7df; --muted: #9a9188; --accent: #e07a5f; }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    h1 { font-size: 1.6rem; font-weight: 600; margin-bottom: 1.4rem; }
+    h2 { font-size: 1.1rem; font-weight: 600; margin: 1.6rem 0 0.5rem; }
+    p, li { color: var(--muted); margin-bottom: 0.8rem; }
+    ul, ol { margin: 0 0 0.8rem 1.2rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .updated { font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <h1>ManekiDoku — Delete Your Data</h1>
+  <p class="updated">Last updated: August 14, 2026</p>
+
+  <p>ManekiDoku is published by Clay Crane Productions. This page explains exactly how to delete the data the game holds, what gets deleted, and what is kept.</p>
+
+  <h2>Delete everything stored on your device</h2>
+  <ol>
+    <li>Open ManekiDoku.</li>
+    <li>Tap the settings gear.</li>
+    <li>Choose <strong>Delete My Data</strong> and confirm.</li>
+  </ol>
+  <p>This immediately and permanently erases your progress, level history, streak, hints, preferences, and the random identifier described below. It cannot be undone, and we hold no backup that could restore it. Uninstalling the app has the same effect.</p>
+
+  <h2>Delete the analytics data we hold</h2>
+  <p>ManekiDoku has no accounts. The only data that leaves your device is gameplay events (level starts, completions, hint use) sent to our analytics provider, Amplitude, tagged with a random identifier generated on your device. It is not linked to your name, email, or any real-world identity.</p>
+  <p>To have that deleted, email <a href="mailto:thomas@claycraneproductions.com">thomas@claycraneproductions.com</a> with the subject <strong>"Delete my data"</strong>. Because the game has no accounts and never asks for your email, we cannot look you up from your message alone — so tell us roughly when you started playing and which level you had reached, and we will work with you to identify the right records before deleting them. We will confirm by reply, normally within 30 days.</p>
+  <p>If you would rather not exchange emails at all: using <strong>Delete My Data</strong> in the app erases the identifier that ties those events to your device, which leaves the remaining analytics permanently anonymous.</p>
+
+  <h2>What is deleted, and what is kept</h2>
+  <ul>
+    <li><strong>Deleted:</strong> all gameplay events and the random device identifier associated with them, plus everything stored locally on your device.</li>
+    <li><strong>Kept:</strong> nothing that identifies you or your device. We may retain aggregate, anonymous counts (for example, "how many players finished level 40") which cannot be traced back to any individual and are therefore not deleted.</li>
+    <li><strong>Retention:</strong> analytics events are retained for at most 24 months, after which they are removed automatically whether or not you ask.</li>
+  </ul>
+
+  <h2>Purchases</h2>
+  <p>ManekiDoku does not offer in-app purchases, so there is no purchase history to delete. Any future purchase records would be held by Apple or Google, not by us.</p>
+
+  <h2>Contact</h2>
+  <p>Clay Crane Productions<br>
+  <a href="mailto:thomas@claycraneproductions.com">thomas@claycraneproductions.com</a></p>
+
+  <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a></p>
+</body>
+</html>
