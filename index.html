@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clay Crane Productions</title>
-  <meta name="description" content="Clay Crane Productions — an independent entertainment company. Mobile games and story-driven Vietnamese indie short films, folded with care.">
+  <meta name="description" content="Clay Crane Productions — an independent entertainment company in Los Angeles. Mobile games and story-driven Vietnamese indie short films, folded with care.">
   <meta property="og:title" content="Clay Crane Productions">
   <meta property="og:description" content="An independent entertainment company. Mobile games and story-driven Vietnamese indie short films, folded with care.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23b04a30' stroke-width='4' stroke-linejoin='round'%3E%3Cpath d='M14 70 L46 58 L38 34 Z' fill='%23b04a30' fill-opacity='0.2'/%3E%3Cpath d='M46 58 L38 34 L64 20 L58 46 Z' fill='%23b04a30' fill-opacity='0.4'/%3E%3Cpath d='M46 58 L58 46 L86 52 Z' fill='%23b04a30' fill-opacity='0.2'/%3E%3Cpath d='M64 20 L70 10'/%3E%3Cpath d='M14 70 L46 58 L86 52'/%3E%3Cpath d='M58 46 L64 78'/%3E%3C/g%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://claycraneproductions.com/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='13 3 94 94'%3E%3Ccircle cx='60' cy='50' r='47' fill='%23b04a30'/%3E%3Cg fill='%23faf7f2'%3E%3Cpolygon points='50,62 40,20 66,58' opacity='0.7'/%3E%3Cpolygon points='53,64 84,24 71,62'/%3E%3Cpolygon points='42,64 60,57 78,64 60,77'/%3E%3Cpolygon points='46,64 22,36 51,61'/%3E%3Cpolygon points='22,36 15,44 25,40'/%3E%3Cpolygon points='74,64 102,44 69,61'/%3E%3C/g%3E%3C/svg%3E">
   <style>
     :root {
       color-scheme: light dark;
@@ -16,6 +18,7 @@
       --muted: #6f675e;
       --accent: #b04a30;
       --card: #ffffff;
+      --line: color-mix(in srgb, var(--muted) 22%, transparent);
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -27,72 +30,234 @@
       }
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
       color: var(--ink);
       font-family: "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
-    .crane {
-      width: 96px;
-      height: 96px;
-      margin-bottom: 2rem;
-    }
-    h1 {
-      font-size: clamp(1.8rem, 5vw, 2.6rem);
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-    .tagline {
-      margin-top: 0.9rem;
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 40ch;
       line-height: 1.6;
     }
-    .status {
-      margin-top: 2.6rem;
-      display: inline-block;
-      background: var(--card);
-      border: 1px solid color-mix(in srgb, var(--muted) 25%, transparent);
-      border-radius: 999px;
-      padding: 0.55rem 1.3rem;
-      font-size: 0.92rem;
-      color: var(--muted);
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
     }
-    .status b { color: var(--accent); font-weight: 600; }
-    footer {
-      margin-top: 4rem;
+    .brand { display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600; }
+    .brand:hover { text-decoration: none; }
+    .brand svg { width: 30px; height: 30px; }
+    .links { display: flex; gap: 1.4rem; font-size: 0.95rem; }
+    .links a { color: var(--muted); }
+
+    .hero { text-align: center; padding: 4.5rem 0 5rem; }
+    .hero .crane { width: 96px; height: 96px; margin-bottom: 1.8rem; }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); font-weight: 600; letter-spacing: 0.01em; line-height: 1.2; }
+    .tagline { margin: 1rem auto 0; font-size: 1.15rem; color: var(--muted); max-width: 40ch; }
+
+    section { padding: 4rem 0; border-top: 1px solid var(--line); }
+    .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 600; margin-top: 0.4rem; }
+    .lead { color: var(--muted); margin-top: 0.6rem; max-width: 60ch; }
+
+    .game {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    .game-head { display: flex; align-items: center; gap: 1rem; }
+    .game-head img { width: 64px; height: 64px; border-radius: 15px; }
+    h3 { font-size: 1.35rem; font-weight: 600; }
+    .genre { color: var(--muted); font-size: 0.92rem; }
+    .game p.desc { margin-top: 1rem; max-width: 46ch; }
+    .status {
+      display: inline-block;
+      margin-top: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
       font-size: 0.85rem;
       color: var(--muted);
     }
-    footer a { color: var(--accent); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
+    .game .meta { margin-top: 0.9rem; font-size: 0.85rem; }
+    .shots { display: flex; gap: 0.8rem; }
+    .shots img {
+      width: 150px;
+      height: auto;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      display: block;
+    }
+
+    .film {
+      margin-top: 2rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2rem;
+    }
+    .film p + p { margin-top: 0.8rem; }
+
+    .team { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-top: 2rem; }
+    .person {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+    }
+    .person .role { color: var(--muted); margin-top: 0.2rem; }
+
+    .contact p { margin-top: 0.6rem; overflow-wrap: anywhere; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+
+    @media (max-width: 720px) {
+      .links { gap: 1rem; font-size: 0.9rem; }
+      .hero { padding: 3rem 0 3.5rem; }
+      .game { grid-template-columns: 1fr; padding: 1.5rem; }
+      .shots img { width: calc(50% - 0.4rem); }
+      .film, .person { padding: 1.5rem; }
+      .team { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .brand span { display: none; }
+    }
   </style>
 </head>
 <body>
-  <svg class="crane" viewBox="0 0 100 100" role="img" aria-label="Origami crane logo">
-    <g fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
-      <path d="M14 70 L46 58 L38 34 Z" fill="var(--accent)" fill-opacity="0.14"/>
-      <path d="M46 58 L38 34 L64 20 L58 46 Z" fill="var(--accent)" fill-opacity="0.28"/>
-      <path d="M46 58 L58 46 L86 52 Z" fill="var(--accent)" fill-opacity="0.14"/>
-      <path d="M64 20 L70 10"/>
-      <path d="M14 70 L46 58 L86 52"/>
-      <path d="M58 46 L64 78"/>
-    </g>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="badge">
+        <circle cx="60" cy="50" r="47" fill="var(--accent)"/>
+        <g fill="var(--bg)">
+          <polygon points="50,62 40,20 66,58" opacity="0.7"/>
+          <polygon points="53,64 84,24 71,62"/>
+          <polygon points="42,64 60,57 78,64 60,77"/>
+          <polygon points="46,64 22,36 51,61"/>
+          <polygon points="22,36 15,44 25,40"/>
+          <polygon points="74,64 102,44 69,61"/>
+        </g>
+      </g>
+    </defs>
   </svg>
-  <h1>Clay Crane Productions</h1>
-  <p class="tagline">An independent entertainment company. Mobile games and story-driven Vietnamese indie short films, folded with care.</p>
-  <p class="status">Games and films <b>in the works</b>.</p>
-  <footer>
-    <p>Contact: <a href="mailto:thomas@claycraneproductions.com">thomas@claycraneproductions.com</a></p>
-    <p style="margin-top:0.4rem;"><a href="privacy.html">Privacy</a> · © 2026 Clay Crane Productions</p>
-  </footer>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="Clay Crane Productions home">
+        <svg viewBox="13 3 94 94" aria-hidden="true"><use href="#badge"/></svg>
+        <span>Clay Crane Productions</span>
+      </a>
+      <div class="links">
+        <a href="#games">Games</a>
+        <a href="#films">Films</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <svg class="crane" viewBox="13 3 94 94" role="img" aria-label="Clay Crane Productions logo: an origami crane in a circle"><use href="#badge"/></svg>
+      <h1>Clay Crane Productions</h1>
+      <p class="tagline">An independent entertainment company in Los Angeles. Mobile games and story-driven Vietnamese indie short films, folded with care.</p>
+    </header>
+
+    <main>
+    <section id="games">
+      <p class="eyebrow">Games</p>
+      <h2>Small puzzles, made carefully</h2>
+      <p class="lead">Calm, polished puzzle games for iPhone and iPad, built in-house from first sketch to App Store submission.</p>
+
+      <article class="game">
+        <div>
+          <div class="game-head">
+            <img src="img/manekidoku-icon.png" alt="ManekiDoku app icon" width="64" height="64">
+            <div>
+              <h3>ManekiDoku</h3>
+              <p class="genre">Cat logic puzzle</p>
+            </div>
+          </div>
+          <p class="desc">A cozy logic puzzle with lucky cats. Place one cat in every row, column and color, and never let two cats touch. Levels start gentle and get properly tricky.</p>
+          <span class="status">Returning to the App Store</span>
+          <p class="meta"><a href="manekidoku/support.html">Support</a> · <a href="manekidoku/privacy.html">Privacy</a></p>
+        </div>
+        <div class="shots">
+          <img src="img/manekidoku-1.jpg" alt="ManekiDoku gameplay: a 4 by 4 board with two cats placed" width="414" height="900" loading="lazy">
+          <img src="img/manekidoku-2.jpg" alt="ManekiDoku tutorial: one cat per color" width="414" height="900" loading="lazy">
+        </div>
+      </article>
+
+      <article class="game">
+        <div>
+          <div class="game-head">
+            <img src="img/tenmatch-icon.png" alt="Ten Match app icon" width="64" height="64">
+            <div>
+              <h3>Ten Match</h3>
+              <p class="genre">Numbers game</p>
+            </div>
+          </div>
+          <p class="desc">Tap two numbers that are equal, or two that add up to ten, and clear the board. A journey through five cities, with a fresh daily challenge every day.</p>
+          <span class="status">Coming to the App Store</span>
+          <p class="meta"><a href="tenmatch/support.html">Support</a> · <a href="tenmatch/privacy.html">Privacy</a></p>
+        </div>
+        <div class="shots">
+          <img src="img/tenmatch-1.jpg" alt="Ten Match gameplay: a board of numbers to pair and clear" width="414" height="900" loading="lazy">
+          <img src="img/tenmatch-2.jpg" alt="Ten Match home screen: a journey through five cities" width="414" height="900" loading="lazy">
+        </div>
+      </article>
+    </section>
+
+    <section id="films">
+      <p class="eyebrow">Films</p>
+      <h2>Story-driven Vietnamese indie shorts</h2>
+      <div class="film">
+        <p>We make intimate, character-first short films rooted in Vietnamese stories, written and produced independently.</p>
+        <p>Our first short is in development.</p>
+      </div>
+    </section>
+
+    <section id="team">
+      <p class="eyebrow">Team</p>
+      <h2>Who we are</h2>
+      <div class="team">
+        <div class="person">
+          <h3>Thomas Petersen</h3>
+          <p class="role">Founder · Games &amp; technology</p>
+        </div>
+        <div class="person">
+          <h3>Alice Vo</h3>
+          <p class="role">Co-founder · Films &amp; production</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <p class="eyebrow">Contact</p>
+      <h2>Say hello</h2>
+      <p>For press, partnerships, or player support: <a href="mailto:thomas@claycraneproductions.com">thomas@claycraneproductions.com</a></p>
+    </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Clay Crane Productions LLC · Los Angeles, California</span>
+      <a href="privacy.html">Privacy</a>
+    </footer>
+  </div>
 </body>
 </html>
